@@ -1,0 +1,83 @@
+.pin {
+    padding: 5em 0 4.25em;
+    background: $blue;
+    @include breakpoint(600) {
+        padding: 4em 0 2.5em;
+    }
+    .section__title {
+        color: white;
+        margin-bottom: .5em;
+        @include breakpoint(600) {
+            font-size: 1.75em;
+        }
+    }
+    .section__subtitle {
+        letter-spacing: .04em;
+        margin-bottom: 2.3em;
+        color: $gray;
+        @include breakpoint(600) {
+            margin-bottom: 3em;
+        }
+    }
+}
+
+.pin__list {
+    @include clearfix();
+    text-align: center;
+}
+
+.pin__item {
+    float: left;
+    width: 20%;
+    height: 5em;
+    position: relative;
+    @include breakpoint(600) {
+        width: 32%;
+        height: 4em;
+        display: inline-block;
+        float:initial;
+    }
+    &.en {
+        display: none;
+    }
+}
+
+.pin__item-img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    margin: auto;
+    max-width: 7em;
+    max-height: 3em;
+    @include breakpoint(800) {
+        max-width: 6em;
+    }
+    @include breakpoint(600) {
+        max-width: 5em;
+    }
+}
+
+.en {
+    .pin__list {
+        text-align: center;
+    }
+    .pin__item {
+        width: 25%;
+        float: initial;
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(750) {
+            width: 40%;
+        }
+    }
+    .pin__item-img {
+        max-width: 12em;
+        @include breakpoint(750) {
+            max-width: 7em;
+        }
+    }
+}

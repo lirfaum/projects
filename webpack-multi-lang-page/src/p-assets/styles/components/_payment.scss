@@ -1,0 +1,204 @@
+$url_1: url("~images/pay/1.png");
+$url_2: url("~images/pay/2.png");
+$url_3: url("~images/pay/3.png");
+$url_4: url("~images/pay/4.png");
+$url_5: url("~images/pay/5.png");
+$url_6: url("~images/pay/6.png");
+$url_7: url("~images/pay/7.png");
+$url_8: url("~images/pay/9.png");
+$url_9: url("~images/pay/10.png");
+$url_10: url("~images/pay/11.png");
+$url_11: url("~images/pay/8.png");
+$url_12: url("~images/pay/12.png");
+
+// CN icons
+$url_13: url('~images/pay-cn/alipay.png');
+$url_14: url('~images/pay-cn/mastercard.png');
+$url_15: url('~images/pay-cn/neteller.png');
+$url_16: url('~images/pay-cn/skrill.png');
+$url_17: url('~images/pay-cn/union.png');
+$url_18: url('~images/pay-cn/visa.png');
+$url_19: url('~images/pay-cn/wechat.png');
+
+.pay-icons {
+  display: inline-block;
+  vertical-align: middle;
+  width:100%;
+  padding: 20px 0px;
+  text-align: center !important;
+
+  &.cn {
+    .ico {
+      height: 90px ;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      vertical-align: bottom;
+    }
+
+    li {
+      &.not-cn {
+        display: none;
+      }
+
+      &.cn {
+        display: inline-block;
+      }
+    }
+  }
+
+  li {
+    padding: 0;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+    line-height: 49px;
+    cursor: default;
+    margin: 10px 15px;
+    &:after, &:before {
+      background-color: transparent;
+    }
+    
+    &.cn {
+      display: none;
+    }
+  }
+  .ico {
+    display: inline-block;
+    vertical-align: middle;
+    height: 49px;
+    line-height: 100%;
+  }
+  //CN icons start
+  .alipay {
+    background: $url_13;
+    height: 72px;
+    width: 109px;
+  }
+  .mastercard {
+    background: $url_14;
+    height: 79px;
+    width: 71px;
+  }
+  .neteller {
+    background: $url_15;
+    height: 69px;
+    width: 104px;
+  }
+  .skrill {
+    background: $url_16;
+    height: 69px;
+    width: 64px;
+  }
+  .union {
+    background: $url_17;
+    height: 77px;
+    width: 60px;
+  }
+  .visa {
+    background: $url_18;
+    height: 68px;
+    width: 62px;
+  }
+  .wechat {
+    background: $url_19;
+    height: 77px;
+    width: 45px;
+  }
+  //CN icons end
+  .ico-1 {
+    background: $url_1;
+    height: 37px;
+    width: 144px;
+    // &:hover {
+    //   background-position: 0 -35px;
+    // }
+  }
+  .ico-2.ru {
+    background: $url_2;
+    height: 39px;
+    width: 91px;
+    // &:hover {
+    //   background-position: 0 -39px;
+    // }
+  }
+  .ico-2.en {
+    background: $url_8;
+    height: 47px;
+    width: 91px;
+    // &:hover {
+    //   background-position: 0 -39px;
+    // }
+  }
+  .ico-2.id {
+    background: $url_12;
+    height: 26px;
+    width: 122px;
+    // &:hover {
+    //   background-position: 0 -39px;
+    // }
+  }
+  .ico-3 {
+    background: $url_3;
+    height: 38px;
+    width: 87px;
+    // &:hover {
+    //   background-position: 0 -35px;
+    // }
+  }
+  .ico-4.ru {
+    background: $url_4;
+    height: 49px;
+    width: 107px;
+    // &:hover {
+    //   background-position: 0 -49px;
+    // }
+  }
+  .ico-4.en {
+    background: $url_10;
+    height: 49px;
+    width: 107px;
+    // &:hover {
+    //   background-position: 0 -49px;
+    // }
+  }
+  .ico-5 {
+    background: $url_5;
+    height: 32px;
+    width: 137px;
+    // &:hover {
+    //   background-position: 0 -32px;
+    // }
+  }
+  .ico-6 {
+    background: $url_6;
+    height: 28px;
+    width: 91px;
+    // &:hover {
+    //   background-position: 0 -25px;
+    // }
+  }
+  .ico-7 {
+    background: $url_7;
+    height: 41px;
+    width: 67px;
+    // &:hover {
+    //   background-position: 0 -37px;
+    // }
+  }
+  .ico-8 {
+    background: $url_9;
+    height: 42px;
+    width: 238px;
+    // &:hover {
+    //   background-position: 0 -37px;
+    // }
+  }
+  .ico-9 {
+    background: $url_11;
+    height: 33px;
+    width: 96px;
+  }
+
+}

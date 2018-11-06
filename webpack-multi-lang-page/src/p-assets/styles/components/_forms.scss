@@ -1,0 +1,329 @@
+
+@import "icons/font_icons";
+
+$black:#000;
+$black_71: rgba(0,0,0,0.71);
+
+// API v2 form.
+@mixin form_registration (
+    $input-height,
+    $input-fz,
+    $label-fz,
+    $temp-fz,
+    $input-color,
+    $label-color,
+    $temp-l-color,
+    $temp-color,
+    $currency-size,
+    $title-currency-display,
+    $title-display,
+    $form-space-bottom
+  ){
+  // FORM BODY
+  .form-wrapper {
+    position: relative;
+    z-index: 100;
+  }
+  .horizontal {
+    fieldset {
+      word-spacing: -.36em;
+    }
+    .form-group {
+      display: inline-block;
+      vertical-align: middle;
+      word-spacing: normal;
+      width: 33%;
+      padding-left: 1em;
+      box-sizing: border-box;
+    }
+    &.float {
+      fieldset {
+        &:after {
+          content: '';
+          clear: both;
+          width: 100%;
+          height: 0px;
+        }
+      }
+      .form-group {
+        float: left;
+        width: 33%;
+      }
+    }
+  }
+  .vertical {
+    fieldset {
+      word-spacing: normal;
+    }
+    .form-group {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  .form-registration {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+    .form-group {
+      margin-bottom: $form-space-bottom;
+      &:after {
+        clear: both;
+        width: 100%;
+        height: 0px;
+        display: inline-block;
+      }
+      label {
+        position: relative;
+      }
+      &.i_agree-cont {
+        @extend %reg-form-i-agree !optional;
+      }
+      .label-agree {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        input[type=checkbox]{
+          display: none;
+        }
+      }
+      .check-text {
+        font-size: $temp-fz;
+        color: $temp-color;
+        @extend %reg-form-check-text !optional;
+        a {
+          color: $temp-l-color;
+        }
+      }
+      .btn.submit {
+        @extend %reg-form-submit-btn !optional;
+      }
+      .input-password.helper {
+        position: absolute;
+        @extend %reg-form-pwd-helper !optional;
+        &.active:after {
+          content: "\f070"
+        }
+        &:after {
+          content: '\f06e';
+        }
+      }
+      input[type=password],
+      input[type=text]{
+        font-size: $input-fz;
+        margin: 0;
+        width: 100%;
+        display: table-cell;
+        box-sizing: border-box;
+        vertical-align: middle;
+        color: $input-color;
+        @extend %reg-form-input-decore !optional;
+        line-height: $input-height;
+        height: $input-height;
+        &:focus {
+          @extend %reg-form-form-focus !optional;
+        }
+      }
+    }
+    .check {
+      @extend %reg-form-check !optional;
+      font-size: $temp-fz;
+      width: 1em;
+      height: 1em;
+      position: relative;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-right: .5em;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+      }
+    }
+    input[type=radio]{
+      display: none;
+    }
+    input[type=checkbox]:checked +
+    .check {
+      @extend %reg-form-check-checked !optional;
+      &:after {
+
+      }
+    }
+    .form-title {
+      @extend %reg-form-title !optional;
+      vertical-align: middle;
+      display: $title-display;
+      font-size: $label-fz;
+      color: $label-color;
+    }
+    .focus-helper {
+      display: table;
+      width: 100%;
+      position: relative;
+      @extend %reg-form-focus-helper !optional;
+        .active {
+          &:after {
+            content: '';
+            @extend %reg-form-focus-helper-after !optional;
+          }
+        }
+
+        &.g-recaptcha-response {
+          display: block;
+          width: 240px;
+        }
+      }
+    .currency-title {
+      display: $title-currency-display;
+      vertical-align: middle;
+      padding-right: .5em;
+      box-sizing: border-box;
+    }
+    .currency-cont {
+      text-align: left;
+    }
+    .form-currency {
+      display: inline-block;
+      vertical-align: middle;
+      .currency-inner {
+        font-size: $currency-size;
+      }
+      .custom-radio-currency {
+        &:first-child {
+          margin-left: 0;
+        }
+        display: inline-block;
+        margin-left: 0.5em;
+      }
+      input[type=radio]{
+        display: none;
+        &:checked + .decorator {
+          @extend %reg-form-decorator-checed !optional;
+        }
+      }
+      .decorator {
+        height: 1.5em;
+        width: 1.5em;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        vertical-align: middle;
+        cursor: pointer;
+        @extend %reg-form-decorator !optional ;
+        text-align: center;
+        font-weight: 700;
+        .fa {
+          position: absolute;
+          height: 1em;
+          width: 1em;
+          top: 50%;
+          left: 50%;
+          margin-top: -.5em;
+          margin-left: -.5em;
+          text-align: center;
+          line-height: 1em;
+          &:before {
+            color: inherit;
+          }
+          &.usd {
+            &:before {
+               @extend .n-icon-dollar:before;
+            }
+          }
+          &.rub {
+            &:before {
+              @extend .n-icon-rub:before;
+            }
+          }
+          &.eur {
+            &:before {
+              @extend .n-icon-eur:before;
+            }
+          }
+          &.kzt {
+            &:before {
+              @extend .n-icon-kzt:before;
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-control + .tooltip {
+    bottom: 100%;
+    position: absolute;
+    top: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    margin-left: -120px;
+    width: 240px;
+    max-width: 240px;
+    -webkit-transform: none;
+    transform: none;
+    .tooltip-arrow {
+    left: 50% !important;
+    right: auto !important;
+    }
+    .tooltip-inner {
+      width: 100%;
+      position: static;
+      max-width: none;
+      display: block;
+    }
+  }
+  .form-info {
+    color: $temp-color;
+    padding-bottom: .5em;
+    display: inline-block;
+  }
+  .slide-check {
+    .form-registration {
+        .check {
+        @extend %reg-form-slide-check !optional;
+        position: relative;
+        width: 2em;
+        height: 1em;
+        transition: background-color .3s ease-in-out;
+        &:after {
+          left: 75%;
+          content: '';
+          position: absolute;
+          top: 47%;
+          height: 1em;
+          width: 1em;
+          margin-top: -0.5em;
+          margin-left: -0.5em;
+          border-radius: 50%;
+          transition: left .3s ease-in-out;
+        }
+      }
+      input[type=checkbox]:checked +
+      .check {
+        @extend %reg-form-slide-check-checked !optional;
+        &:after {
+          left: 25%;
+        }
+      }
+    }
+  }
+  .already-have {
+    display: none;
+    text-align: center;
+    a {
+      font-size: 14px;
+      color: #000;
+    }
+  }
+}
+
+.grecaptcha-badge {
+  display: none;
+}

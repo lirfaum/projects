@@ -1,0 +1,62 @@
+.alert {
+  $color-mountain-meadow:    #1AA853;
+  $color-carnation:          #F86060;
+  $color-bright-sun-lighten: #FFDD47;
+  $white:                    #FFFFFF;
+  $color-woodsmoke:          #131416;
+
+  $alertmap : (
+    'success': (
+      'color': $color-mountain-meadow,
+      'icon' : 'check',
+    ),
+    'error' : (
+      'color': $color-carnation,
+      'icon' : 'close',
+    ),
+    'warning': (
+      'color': $color-bright-sun-lighten,
+      'icon' : 'error-o',
+    ),
+  );
+
+  @mixin alert-theme($map: $alertmap) {
+    @each $name, $value in $map {
+      &.#{$name} {
+        border: 2px solid mdg($value, 'color');
+        color: mdg($value, 'color');
+        @extend .n-icon-#{mdg($value, 'icon')};
+      }
+      &.#{$name}.fill{
+        $color: mdg($value, 'color');
+        background-color: $color;
+        border: 2px solid $color;
+
+        @if $color == $color-bright-sun-lighten {
+          color: $color-woodsmoke;
+        }@else{
+          color: $white;
+        }
+        @extend .n-icon-#{mdg($value, 'icon')};
+      }
+    }
+  };
+
+  $icon-size: 18px;
+
+  @include fontface($base-font, none, 14px);
+  line-height: 14px;
+  padding: 8px 16px 8px $icon-size*2;
+  border-radius: 4px;
+  display: block;
+  position: relative;
+  text-align: left;
+  &:before {
+    position: absolute;
+    font-size: $icon-size;
+    left: $icon-size;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  @include alert-theme();
+}

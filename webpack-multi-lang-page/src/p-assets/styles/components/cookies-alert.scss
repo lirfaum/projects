@@ -1,0 +1,35 @@
+$color-woodsmoke: #131416;
+
+.cookies-information-container {
+  position: fixed;
+  z-index: 1000;
+  bottom: -110%;
+  width: 100%;
+  height: auto;
+  padding: 16px 40px;
+  background-color: rgba($color-woodsmoke, 0.7);
+  transition: bottom .3s ease-in-out;
+
+  p {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 300;
+    color: rgba($white, .7);
+  }
+
+  .btn-close {
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    font-size: 14px;
+    background: none;
+    color: white;
+
+    cursor: pointer;
+  }
+
+  &.active {
+    bottom: 0%;
+    transition: bottom .3s ease-in-out;
+  }
+}

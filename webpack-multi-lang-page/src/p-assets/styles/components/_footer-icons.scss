@@ -1,0 +1,74 @@
+.social-row {
+  & > .offset-row-sm-l {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.ru,
+  &.kz {
+    .ru {
+      display: flex;
+    }
+  }
+
+  &.id {
+    .id {
+      display: flex;
+    }
+  }
+
+  &.th {
+    .th {
+      display: flex;
+    }
+  }
+
+  &.vn {
+    .vn {
+      display: flex;
+    }
+  }
+
+  &.en {
+    .en {
+      display: flex;
+    }
+  }
+
+  &.en {
+    .en {
+      display: flex;
+    }
+  }
+
+  &.tr {
+    .tr {
+      display: flex;
+    }
+  }
+
+  &.es {
+    .es {
+      display: flex;
+    }
+  }
+
+  &.vn {
+    .vn {
+      display: flex;
+    }
+  }
+
+  &.pl {
+    .pl {
+      display: flex;
+    }
+  }
+
+  &.cn {
+    .cn {
+      display: flex;
+    }
+  }
+}

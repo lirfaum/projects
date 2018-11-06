@@ -1,0 +1,39 @@
+$white: #ffffff;
+
+.awards {
+  display: inline-block;
+  vertical-align: middle;
+  &.vn,
+  &.pt {
+    .item {
+      margin: 0 4px;
+    }
+  }
+  .item {
+    margin: 0 24px;
+    width: 240px;
+    display: inline-block;
+    vertical-align: middle;
+    .grats-img, .desc {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .grats-img {
+      margin-right: 15px;
+    }
+    .desc {
+      color: $white;
+      width: 72%;
+      .break {
+        display: none;
+      }
+      .title {
+        @include font(16px, $white, 18px, $base-font-bold);
+        margin-bottom: 13px;
+      }
+      .description {
+        @include font(16px, rgba($white,.5), 18px, $base-font-light-i);
+      }
+    }
+  }
+}
