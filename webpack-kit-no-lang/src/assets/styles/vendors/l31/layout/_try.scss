@@ -1,0 +1,198 @@
+.try {
+    background: $yellow;
+    padding: 5.5em 0 4.5em;
+    @include breakpoint(600) {
+        padding: 4em 0 4em;
+    }
+    .section__title {
+        color: black;
+        font-size: 2.5em;
+        line-height: 1.2;
+        margin-bottom: 2.5em;
+        @include breakpoint(1000) {
+            font-size: 2em;
+        }
+        @include breakpoint(600) {
+            font-size: 1.5em;
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+.try__wrap {
+    @include clearfix();
+    position: relative;
+    @include breakpoint(1000) {
+        margin-bottom: 3em;
+    }
+}
+
+.try__info {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    z-index: 1;
+    min-width: 330px;
+    @include breakpoint(1000) {
+        display: none;
+    }
+}
+
+.try__text {
+    color: #112029;
+    font-size: 0.7em;
+    line-height: 1;
+    margin-bottom: 2.4em;
+}
+.en .try__text{
+    font-size: .8em;
+}
+.try__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.25em;
+}
+
+.try__title {
+    color: #112029;
+    font-size: 0.6em;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: .04em;
+    margin-top: .5em;
+}
+
+.try__socials-link {
+    width: 1.4em;
+    height: 1.4em;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 1em;
+    &:first-child {
+        width: .75em;
+        height: 1.25em;
+        margin-left: 0;
+    }
+     &:nth-child(2) {
+        width: 2em;
+    }
+    svg {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    path,polygon, circle {
+        fill: #172934;
+        transition: $trans;
+    }
+    &:hover {
+        path,polygon, circle {
+            fill: white;
+        }
+    }
+}
+
+.try__button {
+    color: #323232;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.33;
+    text-transform: uppercase;
+    text-align: center;
+    background: white;
+    border-radius: 1.875em;
+    padding: 1em 1em;
+    display: block;
+    box-sizing: border-box;
+    transition: $trans;
+    &:hover {
+        background: black;
+        color: $yellow;
+    }
+}
+
+.try__img {
+    position: relative;
+}
+
+.try__img-big {
+    margin-left: -1.75em;
+    @include breakpoint(600) {
+        margin-left: 0;
+    }
+}
+
+.try__img-small {
+    position: absolute;
+    bottom: 1.25em;
+    right: 0;
+    @include breakpoint(1000) {
+        max-height: 45%;
+    }
+    @include breakpoint(600) {
+        bottom: .45em;
+        right: initial;
+        left: 1.5em;
+    }
+}
+
+.try__mobile {
+    display: none;
+    @include breakpoint(1000) {
+        display: block;
+        text-align: center;
+    }
+}
+
+.try__apps-link {
+    display: inline-block;
+    width: 10em;
+    max-height: 3em;
+    margin: 0 2em;
+    @include breakpoint(600) {
+        width: 9.1em;
+        margin: 0;
+        &:first-child{
+            margin-right: 1.9em;
+        }
+        &.phone{
+            width: 12em;
+            margin-right: 0;
+        }
+    }
+    svg {
+        max-width: 100%;
+    }
+    .in,
+    .out,
+    .logo,
+    .text {
+        transition: $trans;
+    }
+    &:hover {
+        .in,
+        .out {
+            fill: white;
+            transition: $trans;
+        }
+        .logo,
+        .text {
+            transition: $trans;
+            fill: black;
+        }
+    }
+}
+.try__buttons{
+   .try__apps-link{
+    margin: 0;
+    width: 9.3em;
+    &:first-child{
+        margin-right: 2.5em;
+    }
+   }
+}
+.IE .try__apps-link{
+    height: 3em;
+}

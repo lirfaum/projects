@@ -1,0 +1,62 @@
+// children in a row fadeIn
+// class to parent
+// count - counter of children
+
+@mixin fadeInFromParent($count : 10) {
+  @for $i from 1 through $count{
+    &:nth-child(#{ $i }) {
+      transition-delay: #{0.085 * $i}s;
+    }
+  }
+}
+
+.fade-in-parent-ftop {
+  & > * {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  &.active {
+    & > * {
+      @include fadeInFromParent();
+
+      opacity: 1;
+      transform: translateY(0px);
+      transition: all .3s ease-out; 
+    }
+  }
+}
+
+.fade-in-parent-fleft {
+  & > * {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  &.active {
+    & > * {
+      @include fadeInFromParent();
+
+      opacity: 1;
+      transform: translateX(0px);
+      transition: all .3s ease-out; 
+    }
+  }
+}
+
+.fade-in-parent-fbot {
+  & > * {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  &.active {
+    & > * {
+      @include fadeInFromParent();
+
+      opacity: 1;
+      transform: translateY(0px);
+      transition: all .3s ease-out; 
+    }
+  }
+}

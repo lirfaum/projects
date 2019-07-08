@@ -6,7 +6,6 @@ const util = require('./util');
 const development = !!process.env.DEV;
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const I18nWebpackPlugin = require('./plugins/i18n-webpack-plugin');
 
 const plugins = [
   new MiniCssExtractPlugin({
@@ -14,22 +13,16 @@ const plugins = [
   }),
 ];
 
-//-- Register all lands templates --//
-plugins.push(...pages.templates);
-
-// tunr ON if need locales
-// plugins.push(new I18nWebpackPlugin({
-//   template: './[locale]/[name].html',
-//   locales: path.resolve(__dirname, '../src/locales'),
-// }));
+//-- Register all pages templates --//
+plugins.push(...pages.pageTemplates);
 
 const config = {
-  entry: { ...pages.paths, main: path.join(__dirname, '../src') },
+  entry: {  main: path.join(__dirname, '../src'), ...pages.pagesPaths },
   context: path.resolve(__dirname, '../src'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: util.filePath('assets/scripts/[name]', '.js')
+    filename: util.filePath('assets/scripts/[name]', '.js'),
   },
   mode: development ? 'development' : 'production',
   resolveLoader: {
@@ -42,6 +35,19 @@ const config = {
   },
   module: {
     rules: loaders,
+  },
+  stats: {
+    all: true,
+    modules: true,
+    maxModules: 0,
+    errors: true,
+    warnings: true,
+    moduleTrace: true,
+    errorDetails: true
+  },
+  watchOptions: {
+    poll: 1000,
+    aggregateTimeout: 1000,
   },
   plugins,
 };

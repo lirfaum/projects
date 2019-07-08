@@ -2,35 +2,22 @@ const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Blacklist
-const blacklist = getBlacklist();
+// Root folder of pages
+const root = path.resolve(__dirname, '../src/pages/');
 
-// Root folder of lands
-const root = path.resolve(__dirname, '../src/pages');
-
-// Getting list of lands
-const lands = fs.readdirSync(root).filter(file => !blacklist.includes(file));
+const pages = fs.readdirSync(root);
 
 // Generation entries
-const paths = lands.reduce((acc, land) => ({ ...acc, [land]: path.join(root, land) }), {});
+const pagesPaths = pages.reduce((acc, page) => ({ ...acc, [page]: path.join(root, page) }), {});
 
 // Generation templates
-const templates = lands.map(name => new HtmlWebpackPlugin({
+const pageTemplates = pages.map(name => new HtmlWebpackPlugin({
   template: `./pages/${name}/index.pug`,         // Source
   filename: `${name}.html`,                         // Output
   emitFile: false,
-  chunks: [name, 'main'],
+  chunks: ['main', name],
 }));
 
 module.exports = {
-  lands, paths, templates,
+  pages, pagesPaths, pageTemplates
 };
-
-function getBlacklist() {
-  const configPath = path.resolve(__dirname, '../black.list');
-  if (fs.existsSync(configPath)) {
-    const loaded = fs.readFileSync(configPath, { encoding: 'utf8' });
-    if (loaded) return loaded.split(/\n/).filter(name => !name.startsWith('#'));
-  }
-  console.log('Pages configuration file not found!');
-}

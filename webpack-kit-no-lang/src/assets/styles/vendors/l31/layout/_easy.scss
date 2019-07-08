@@ -1,0 +1,89 @@
+.easy {
+    padding: 5em 0 6.5em;
+    background: $blue;
+    box-shadow: 0 0 1.875em rgba(0, 0, 0, 0.5);
+    @include breakpoint(600) {
+        padding: 4em 0 2em;
+    }
+    .section__title {
+        color: white;
+        margin-bottom: .78em;
+        @include breakpoint(600) {
+            font-size: 2em;
+        }
+    }
+    .section__subtitle {
+        margin-bottom: 2em;
+        letter-spacing: .08em;
+        margin-bottom: 4.6em;
+        line-height: 1.6;
+        color: #a7a7a7;
+        @include breakpoint(600) {
+            font-size: .8em;
+            br{
+                display: none;
+            }
+        }
+    }
+}
+
+.easy__list {
+    @include clearfix();
+}
+
+.easy__item {
+    float: left;
+    width: 25%;
+    text-align: center;
+    @include breakpoint(600) {
+        width: 50%;
+        margin-bottom: 3em;
+    }
+}
+
+.easy__item-icon-wrap {
+    height: 5em;
+    position: relative;
+    margin-bottom: 2em;
+    @include breakpoint(600) {
+        margin-bottom: .5em;
+    }
+}
+
+.easy__item-icon {
+    max-width: 3.5em;
+    max-height: 3.5em;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    @include breakpoint(600) {
+        max-width: 3em;
+    }
+}
+
+.easy__item-title {
+    color: white;
+    font-size: 1.125em;
+    line-height: 1.33;
+    margin-bottom: .7em;
+    @include breakpoint(600) {
+        font-size: 1em;
+    }
+}
+
+.easy__item-text {
+    color: #a7a7a7;
+    font-size: 0.875em;
+    font-weight: 300;
+    line-height: 1.43;
+    @include breakpoint(600){
+        br{
+            display: none;
+        }
+        font-size: .925em;
+    }
+}

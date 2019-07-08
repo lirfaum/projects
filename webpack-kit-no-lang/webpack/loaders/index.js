@@ -5,9 +5,27 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = [
   {
     test: /\.js$/,
-    use: { 
-      loader: 'babel-loader',
-    },
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: 'thread-loader',
+        options: {
+          workers: -1,
+          workerParallelJobs: 70,
+          workerNodeArgs: ['--max-old-space-size=2048'],
+          poolRespawn: false,
+          poolTimeout: 2000,
+          poolParallelJobs: 250,
+          name: "my-pool"
+        }
+      },
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+    ]
   },
   {
     test: /\.pug$/,
@@ -64,7 +82,7 @@ module.exports = [
       {
         loader: 'file-loader',
         options: {
-          name: util.filePath('assets/images/[name]'),
+          name: util.filePath('[path][name]'),
         },
       },
       {
@@ -72,14 +90,14 @@ module.exports = [
         options: {
           mozjpeg: {
             progressive: true,
-            quality: 65,
+            quality: 85,
           },
           optipng: {
             enabled: true,
           },
           pngquant: {
-            quality: 80,
-            speed: 4,
+            quality: 90,
+            speed: 10,
           },
           gifsicle: {
             interlaced: false,
