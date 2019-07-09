@@ -1,4 +1,76 @@
-body {
-  color: white;
-  background: black;
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#app {
+  min-height: 500px;
+  min-width: 500px;
+  text-align: center;
+}
+
+.settings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 10px 5px 0 rgba(0,0,0,.3);
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+
+  .setup {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #e3e3e3;
+  }
+
+  input[type="text"] {
+    display: inline-block;
+    margin: 0 5px;
+    width: 150px;
+    border: 1px solid #f2f2f2;
+    border-radius: 7px;
+  }
+}
+
+.preview {
+  min-height: 500px;
+  min-width: 500px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #030333;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .slot {
+    padding: 20px;
+    max-width: 40px;
+    border-right: 1px solid #030333;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+

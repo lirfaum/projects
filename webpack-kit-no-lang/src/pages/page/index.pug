@@ -3,4 +3,33 @@ extends ../../layout/template
 include ../../shared/mixins/common
 
 block content
-  | hi bratishka!
+  .wrapper
+    .settings
+      +loop(1,2)
+        .setup(name="player")
+          label.item
+            span
+              | Player
+              =i
+              |  Name
+            input(type="text" name="playerName" placeholder="Player" + i)
+          label.item
+            span
+              | Symbol
+            input(type="text" name="symbol" placeholder=i)
+          label.item
+            span
+              | Color
+            input(type="color" name="color")
+      label.item
+        span
+          | Choose width of map
+        input(type="range" name="map" min="3" max="15" value="3")
+      button.btn(name="start") Let's Tic-Toc it!
+
+    .preview
+      +loop(1,3)
+        .row
+          .slot
+          .slot
+          .slot
