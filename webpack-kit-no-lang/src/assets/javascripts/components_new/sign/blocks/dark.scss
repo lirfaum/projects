@@ -1,0 +1,114 @@
+ui-form {
+
+  &[theme="dark"] {
+    background-color: $shark;
+
+    input[name="email"],
+    input[name="password"] {
+      @include font(11px, $white, 1, $base-font);
+
+      background-color: #25262c;
+
+      @media (min-width: 440px) {
+        @include font(18px, $white, 1, $base-font);
+      }
+    }
+
+    .agreement {
+
+      .custom-check {
+
+        &:after {
+          background-color: $tuna;
+        }
+      }
+
+      .description {
+
+        @include font(9px, $dove-gray, 15px, $base-font);
+
+        @media (min-width: 440px) {
+
+          @include font(11px, $dove-gray, 15px, $base-font);
+        }
+      }
+    }
+
+    .currencies {
+      min-width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .currency-label {
+      width: 100%;
+
+      .ico-container {
+
+        @include font(15px, $dove-gray, 1.2, $base-font);
+
+        background-color: $tuna;
+
+        @media (min-width: 440px) {
+
+          @include font(18px, $dove-gray, 1.2, $base-font);
+        }
+      }
+
+      @media (min-width: 440px) {
+        height: 50px;
+      }
+    }
+
+    input[name="currency"] {
+
+      &:checked + .ico-container {
+        color: $black;
+      }
+    }
+
+    .group-title {
+
+      @include font(12px, $white, 14px, $base-font);
+
+      margin-bottom: 10px;
+      padding: 0 15px;
+
+      @media (min-width: 440px) {
+
+        @include font(20px, $white, 32px, $base-font);
+
+        margin-bottom: 20px;
+        padding: 0 23px;
+      }
+    }
+
+    .form-group {
+
+      .email-group {
+        background-color: #191b1e;
+      }
+
+      @media (min-width: 440px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .submit {
+
+      @include font(11px, $cod-gray, 1, $base-font-medium);
+      transition: all .25s ease-in-out;
+
+      &:hover {
+        background-color: #FFC700;
+      }
+
+      @media (min-width: 440px) {
+
+        @include font(24px, $black, 1, $base-font-medium);
+      }
+    }
+  }
+}
+
+@debug '______________compile Dark-Form______________';

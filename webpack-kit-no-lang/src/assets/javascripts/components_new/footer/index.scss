@@ -1,0 +1,73 @@
+@import "~styles/components/tools/t_promo_font";
+@import "~styles/components/tools/t_fonts";
+
+$mine-shaft: #2F2F2F;
+$dusty-gray: #979797;
+$silver-chalice: #A2A2A2;
+
+ui-footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 20px 0 10px 0;
+  z-index: 1;
+
+  &.dark {
+    background-color: $mine-shaft;
+  }
+
+  &.nobg {
+    background-color: transparent;
+  }
+
+  //special reset for l1,l2,l3 lands
+  *:after,
+  *:before {
+    content: none;
+  }
+
+  .footer {
+    &-inner {
+      padding-top: 20px;
+
+      &:first-child {
+        .footer-container > *{
+          margin-bottom: 20px;
+        }
+      }
+
+      &:last-child {
+        border-top: 1px solid rgba($dusty-gray, .2);
+
+        .footer-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    &-container {
+      max-width: 1140px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+      text-align: left;
+    }
+
+    &-text {
+      @include font(12px, $silver-chalice, 18px, $base-font-light);
+    }
+  }
+
+  .copyright {
+    @include font(14px, $silver-chalice, 22px, $base-font-light);
+  }
+}
+
+@media screen and (max-width: 823px) {
+  ui-footer .footer-inner:last-child .footer-container {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}

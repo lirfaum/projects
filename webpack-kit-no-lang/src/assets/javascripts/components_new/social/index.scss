@@ -1,0 +1,71 @@
+@import "~styles/components/tools/_m_promo_tools";
+
+social-auth {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 30px;
+
+  .social-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: 100%;;
+    overflow: hidden;
+    border: 1px solid transparent;
+
+    & > button {
+      position: relative;
+      width: 25%;
+      height: 100%;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        z-index: 4;
+      }
+
+      &:nth-child(2) {
+        transform:translateX(50%);
+        z-index: 5;
+      }
+
+
+      &:after  {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        right: 15%;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+
+.soc {
+  &-facebook {
+    background-color: blue;
+    order: 1;
+
+    &:after {
+      background-image: url('~images/social/facebook.svg');
+    }
+  }
+
+  &-gp {
+    background-color: #FFFFFF;
+
+    &:after {
+      background-image: url('~images/social/gp.svg');
+    }
+  }
+}
