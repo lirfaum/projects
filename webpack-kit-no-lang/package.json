@@ -49,6 +49,7 @@
     "ismobilejs": "^0.4.1",
     "jsdom": "^12.0.0",
     "npm": "^6.1.0",
+    "pnp-webpack-plugin": "^1.6.4",
     "ramda": "^0.25.0",
     "rxjs": "^6.3.3",
     "yamljs": "^0.3.0"

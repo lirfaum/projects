@@ -2,6 +2,7 @@ const path = require('path');
 const pages = require('./pages');
 const loaders = require('./loaders');
 const util = require('./util');
+const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 
 const development = !!process.env.DEV;
 
@@ -28,10 +29,16 @@ const config = {
   resolveLoader: {
     alias: {
       'pug-html-loader': path.join(__dirname, 'loaders', 'pug-html-loader'),
-    }
+    },
+    plugins: [
+      PnpWebpackPlugin.moduleLoader(module),
+    ],
   },
   resolve: {
     alias: util.getAliases(),
+    plugins: [
+      PnpWebpackPlugin,
+    ]
   },
   module: {
     rules: loaders,
