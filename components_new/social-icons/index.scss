@@ -1,0 +1,41 @@
+$kournikova: #FFE56D;
+
+social-icons {
+  .social {
+    &-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 500px;
+    }
+
+    &-link {
+      position: relative;
+      display: block;
+      margin: 0 7px;
+      padding: 10px;
+      font-size: 25px;
+      color: rgba(white, .7);
+      line-height: 0;
+      text-align: center;
+      transition: all .3s ease-in-out;
+      cursor: pointer;
+
+     &:hover {
+       border-color: $kournikova;
+       color: $kournikova;
+       transition: all .3s ease-in-out;
+     }
+    }
+  }
+  &[theme="dark"] {
+    .social-link {
+      color: rgba(white, .7);
+    }
+  }
+  &[theme="light"] {
+    .social-link {
+      color: rgba(black, .7);
+    }
+  }
+}

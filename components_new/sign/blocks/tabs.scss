@@ -1,0 +1,29 @@
+
+.tabs-container {
+  position: relative;
+  margin: 0  auto 18px auto;
+  max-width: 65%;
+  
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .tab {
+    @include font(18px, #8A8C8F, 1.1, $base-font);
+
+    width: 100%;
+    padding: 0 0 16px 0;
+    text-align: center;
+    border-bottom: 1px solid #3F4044;
+    transition: all .25s ease-in-out;
+    cursor: pointer;
+
+    &.active {
+      @include font(18px, #FFDE3F, 1.1, $base-font);
+      border-bottom: 1px solid #FFDE3F;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import '~styles/components/tools/_t_promo_font.scss';
+
+ui-logo {
+  display: inline-block;
+
+  .image {
+    width: 150px;
+    height:  auto;
+  }
+
+  &[desc] {
+    .logo-container > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .logo-link{
+      padding-right: 36px;
+      margin-right: 40px;
+      border-right: 1px solid white;
+    }
+
+    .logo-desc {
+      @include font(14px, white, 16px, $base-font);
+    }
+  }
+}

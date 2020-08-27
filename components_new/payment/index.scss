@@ -1,0 +1,57 @@
+@import "~styles/components/tools/_m_promo_tools";
+
+// @import './images'; // TODO: mb delete? hm...
+
+payment-group {
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px auto;
+
+  .payment-image {
+    margin: 20px;
+    text-align: center;
+  }
+
+  img {
+    display: inline-block;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    transition: .15s filter ease-in-out, .2s width ease-in-out, .2s height ease-in-out;
+
+    &:hover {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      transition: .15s filter ease-in-out, .2s width ease-in-out, .2s height ease-in-out;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &[mod] {
+    .payment-image {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      img {
+        height: 25px;
+      }
+
+      p {
+        @include font(16px, #656565, 1.1, $base-font);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  payment-group {
+    .payment-image {
+      flex: 1 0 40%;
+    }
+  }
+}

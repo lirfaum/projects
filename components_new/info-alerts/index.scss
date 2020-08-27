@@ -1,0 +1,41 @@
+$color-woodsmoke: #131416;
+
+.info {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 16px 40px;
+    transform: translateY(100%);
+    background-color: rgba($color-woodsmoke, 0.7);
+    transition: bottom .3s ease-in-out;
+
+    p {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 300;
+      color: rgba(white, .7);
+    }
+
+    .btn-close {
+      position: absolute;
+      right: 20px;
+      top: 40%;
+      font-size: 14px;
+      background: none;
+      color: white;
+
+      cursor: pointer;
+    }
+
+    &.active {
+      transform: translateY(0%);
+      transition: bottom .3s ease-in-out;
+    }
+  }
+}

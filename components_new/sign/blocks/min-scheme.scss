@@ -1,0 +1,98 @@
+ui-form {
+  // &[theme="dark"][scheme="minScheme"] {
+  //   .email-label {
+  //     background-color: #25262c;
+  //   }
+  // }
+  &[scheme="minScheme"] {
+    max-width: 625px;
+    padding: 18px 26px;
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 0;
+
+      .email-label {
+        max-width: 75%;
+      }
+
+      &.submit-group {
+        max-width: 170px;
+        margin: 0 auto;
+        font-size: 18px;
+
+        .submit {
+          @include font(16px, black, 1.1, $base-font-bold);
+
+          width: 100%;
+          padding: 18px 26px;
+        }
+      }
+    }
+
+    input[name="email"],
+    input[name="password"] {
+      padding: 18px 26px;
+      border: 1px solid #c4c4c4;
+      box-sizing: border-box;
+      border-radius: 30px;
+      /* Change autocomplete styles in WebKit */
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus
+      &:-webkit-autofill {
+        border: 1px solid #c4c4c4 !important;
+        -webkit-text-fill-color: white !important;
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+        background-color: transparent !important;
+        transition: background-color 9999999s ease-in-out 0s !important;
+      }
+    }
+
+    ui-sign-up {
+      .fieldset {
+        margin-bottom: 18px;
+
+        & > div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          @media (max-width: 650px) {
+            flex-wrap: wrap;
+          }
+        }
+      }
+
+      .email-group {
+        max-width: 425px;
+        margin-right: 32px;
+
+        @media (max-width: 650px) {
+          margin: 0 auto 18px;
+        }
+      }
+
+      .submit-group {
+        text-align: right;
+      }
+
+      .submit {
+        margin: unset;
+      }
+    }
+
+    ui-sign-in {
+      .fieldset {
+        margin-bottom: 18px;
+        margin-right: 0;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
+
+@debug '______________compile minScheme______________';

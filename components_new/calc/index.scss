@@ -1,0 +1,153 @@
+@import "~styles/components/tools/_m_promo_tools";
+
+$shark: #1D1E23;
+
+ui-calc {
+  display: block;
+  max-width: 1030px;
+  width: 100%;
+  padding-bottom: 80px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #E1E1E2;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0, .12);
+  box-sizing: border-box;
+
+  .header {
+    margin-bottom: 30px;
+    padding: 19px 4%;
+    box-shadow: 0 2px 12px 0px rgba(black, .06);
+
+    @media screen and (max-width: 500px){
+      padding: 0;
+      flex-direction: column-reverse;
+      box-shadow: unset;
+      justify-content: space-around;
+
+      .title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  ui-logo {
+    text-align: center;
+  }
+  
+  .calc-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .calc-params {
+      max-width: 500px;
+      width: 48%;
+    }
+
+    .calc-out {
+      max-width: 380px;
+      width: 36%;
+    }
+  }
+
+  .income-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    
+    &:after {
+      content: '+';
+      display: block;
+      flex-grow: 1;
+      width: 100%;
+      padding: 10px 0;
+      font-size: 35px;
+      font-weight: 300;
+    }
+
+    ui-dropdown {
+      max-width: 120px;
+      width: 100%;
+    }
+  }
+
+  .calc-out {
+    .earning {
+      padding: 27px 45px;
+      border-left: 8px solid #FFDD3C;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      background-color: rgba(#FFDD3C, .15);
+    }
+
+    .earning-title {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .sub-title {
+      margin-bottom: 15px;
+    }
+
+    .summ {
+      @include font(34px, $shark, 1.1, $base-font-medium);
+
+      display: block;
+      margin-bottom: 15px;
+
+      &.month {
+        font-size: 36px;
+      }
+    }
+
+    .btn {
+      display: block;
+      max-width: 300px;
+      margin-top: 14vh;
+      padding: 24px 10px;
+      background-color: #FFDD3C;
+      text-align: center;
+      border-radius: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  ui-calc {
+    .calc-out {
+      .summ {
+        font-size: 26px;
+
+        &.month {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 823px) {
+  ui-calc {
+    padding: 20px 10px;
+    transform: translateY(0);
+
+    .calc-container {
+      .calc-params,
+      .calc-out {
+        width: 100%;
+      }
+
+      .calc-out {
+        .earning {
+          padding: 20px 15px;
+        }
+        .btn {
+          margin: 20px auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.dropdown-wrapper {
+  position: relative
+}
+
+.dropdown-wrapper.active .dropdown-list {
+  height: 360px;
+  transition: height .3s ease-in-out
+}
+
+.dropdown-title {
+  position: relative;
+  cursor: pointer
+}
+
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 0;
+  max-height: 360px;
+  overflow-y: auto;
+  transition: height .2s ease-in-out;
+  z-index: 3
+}
+
+.dropdown-list>* {
+  position: relative;
+  padding-right: 20px;
+  cursor: pointer
+}
+
+
+.dropdown-wrapper.active .dropdown-title {
+  border-bottom: 1px solid transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
+}
+
+.dropdown-wrapper.active .dropdown-title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80%;
+  margin: 0 auto;
+  height: 0px;
+  border: 1px solid #F9F9F9;
+  transform: translateX(-50%)
+}
+
+.dropdown-wrapper.active .dropdown-title:after {
+  transform: rotate(-45deg);
+  transition: .2s transform ease-in-out
+}
+
+.dropdown-wrapper.active .dropdown-list {
+  border: 1px solid #ffe14b;
+  border-top: 0
+}
+
+.dropdown-wrapper.active .dropdown-list .item:hover {
+  color: #FFE14B
+}
+
+.dropdown-wrapper[name="region"] .dropdown-list {
+  max-height: 200px
+}
+
+.dropdown-title {
+  color: #1C1C1C;
+  line-height: 23px;
+  font-size: 17px;
+  font-family: "roboto";
+  font-weight: 300;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #FFE14B;
+  border-radius: 4px
+}
+
+.dropdown-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #1C1C1C;
+  border-right: 1px solid #1C1C1C;
+  transform: rotate(135deg);
+  transition: .2s transform ease-in-out
+}
+
+.dropdown-list {
+  background-color: #fff;
+  border: 1px solid rgba(255, 225, 75, 0);
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px
+}
+
+.dropdown-list .item {
+  color: #1C1C1C;
+  line-height: 23px;
+  font-size: 17px;
+  font-family: "roboto";
+  font-weight: 300;
+  padding: 10px 20px
+}

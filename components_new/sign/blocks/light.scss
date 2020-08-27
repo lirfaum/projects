@@ -1,0 +1,83 @@
+ui-form {
+
+  &[theme="light"] {
+
+    background-color: white;
+
+    .group-title {
+      text-align: center;
+
+      @include font(14px, $cod-gray, 14px, $base-font);
+
+      @media (min-width: 440px) {
+
+        @include font(25px, $cod-gray, 32px, $base-font);
+      }
+    }
+
+    .currencies {
+      max-width: 236px;
+    }
+
+    .currency-label {
+      width: 36px;
+      border-radius: 50%;
+
+      @media (min-width: 440px) {
+        width: 60px;
+        height: 60px;
+      }
+
+      .ico-container {
+
+        @include font(15px, $cod-gray, 1.2, $base-font);
+
+        background-color: $atheans-grey;
+
+        @media (min-width: 440px) {
+
+          @include font(24px, $cod-gray, 1.2, $base-font);
+        }
+      }
+    }
+
+    .submit {
+      @include font(11px, $cod-gray, 1, $base-font-medium);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #FFC700;
+      }
+
+      @media (min-width: 440px) {
+
+        @include font(18px, $black, 1, $base-font-medium);
+      }
+    }
+
+    .agreement {
+
+      .description {
+
+        @include font(8px, $manatee, 15px, $base-font);
+
+        @media (min-width: 440px) {
+          @include font(11px, $manatee, 15px, $base-font);
+        }
+      }
+    }
+
+    input[name="email"],
+    input[name="password"] {
+
+      @include font(11px, $cod-gray, 1, $base-font);
+
+      background-color: $atheans-grey;
+
+      @media (min-width: 440px) {
+
+        @include font(18px, $cod-gray, 1, $base-font);
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+export const flags = [
+  require('images/flags/f-az.svg'),
+  require('images/flags/f-br.svg'),
+  require('images/flags/f-cn.svg'),
+  require('images/flags/f-en.svg'),
+  require('images/flags/f-es.svg'),
+  require('images/flags/f-fa.svg'),
+  require('images/flags/f-id.svg'),
+  require('images/flags/f-in.svg'),
+  require('images/flags/f-kr.svg'),
+  require('images/flags/f-kz.svg'),
+  require('images/flags/f-me.svg'),
+  require('images/flags/f-ms.svg'),
+  require('images/flags/f-pl.svg'),
+  require('images/flags/f-ro.svg'),
+  require('images/flags/f-th.svg'),
+  require('images/flags/f-tr.svg'),
+  require('images/flags/f-ua.svg'),
+  require('images/flags/f-vn.svg')
+]
